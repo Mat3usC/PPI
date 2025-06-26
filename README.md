@@ -11,4 +11,6 @@
 
 
 - Matemática para Computação: Relembrar os conceitos relativos à lógica proposicional e a operações matemáticas necessárias no procedimento de mudança de bases numéricas, em particular, a divisão de inteiros e as potências.
-Leitura e Produção Textual: …
+
+
+- Leitura e Produção Textual: Relatório usando ABNT de relatório técnico.
