@@ -165,6 +165,41 @@ public class TrabalhoPPi {
 
                 break;
             case 6:
+                        System.out.println("Digite o número hexadecimal (sem o 0x): ");
+    scan.nextLine(); // limpa o buffer
+    String hex = scan.nextLine().toUpperCase();
+
+    boolean valido = true;
+    for (int i = 0; i < hex.length(); i++) {
+        char c = hex.charAt(i);
+        if (!((c >= '0' && c <= '9') || (c >= 'A' && c <= 'F'))) {
+            valido = false;
+            break;
+        }
+    }
+
+    if (valido) {
+        decimal = 0;
+        long potencia16 = 1;
+        for (int i = hex.length() - 1; i >= 0; i--) {
+            char c = hex.charAt(i);
+            int valor;
+
+            if (c >= '0' && c <= '9') {
+                valor = c - '0';
+            } else {
+                valor = c - 'A' + 10;
+            }
+
+            decimal += valor * potencia16;
+            potencia16 *= 16;
+        }
+
+        System.out.println("Decimal: " + decimal);
+    } else {
+        System.out.println("Número inválido. Use apenas dígitos de 0 a 9 e letras de A a F.");
+    }
+
                    
 
                 break;
