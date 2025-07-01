@@ -20,7 +20,7 @@ public class TrabalhoPPi {
             System.out.println("2 - binário para decimal");
             System.out.println("3 - decimal para octal");
             System.out.println("4 - octal para decimal");
-            System.out.println("5 - decimal para hexadeimal");
+            System.out.println("5 - decimal para hexadecimal");
             System.out.println("6 - hexadecimal pra decimal");
             System.out.println("7 - binário para hexadecimal");
             System.out.println("8 - hexadecimal para binário");
@@ -56,7 +56,7 @@ public class TrabalhoPPi {
 
                 case 2:
 
-                    System.out.println("Digite o núemro binário: ");
+                    System.out.println("Digite o número binário: ");
 
                     scan.nextLine();
 
@@ -118,7 +118,10 @@ public class TrabalhoPPi {
                     scan.nextLine();
                     octals = scan.nextLine();
 
+                    decimal = 0;
+
                     long potencia8 = 1;
+                   
 
                     for (int i = octals.length() - 1; i >= 0; i--) {
                         char digito = octals.charAt(i);
@@ -174,6 +177,7 @@ public class TrabalhoPPi {
                     decimal = 0;
 
                     long potencia16 = 1;
+                    decimal = 0;
 
                     int i = hexadecimais.length() - 1;
 
@@ -309,9 +313,9 @@ public class TrabalhoPPi {
 
                     String resultadoBinario = "";
 
-                    int p = 0;
-                    while (p < hexaParaBinario.length()) {
-                        char c = hexaParaBinario.charAt(p);
+                     i = 0;
+                    while (i < hexaParaBinario.length()) {
+                        char c = hexaParaBinario.charAt(i);
                         String binGrupo = "";
 
                         if (c == '0')
@@ -352,7 +356,7 @@ public class TrabalhoPPi {
                         }
 
                         resultadoBinario += binGrupo;
-                        p++;
+                        i++;
                     }
 
                     System.out.println("Binário: " + resultadoBinario);
@@ -370,12 +374,12 @@ public class TrabalhoPPi {
 
                     String octalFinal = "";
 
-                    int i9 = binParaOctal.length() - 3;
-                    while (i9 >= 0) {
+                     i = binParaOctal.length() - 3;
+                    while (i >= 0) {
                         String grupo = "";
                         int f = 0;
                         while (f < 3) {
-                            grupo += binParaOctal.charAt(i9 + f);
+                            grupo += binParaOctal.charAt(i + f);
                             f++;
                         }
 
@@ -391,7 +395,7 @@ public class TrabalhoPPi {
                         }
 
                         octalFinal = valor + octalFinal;
-                        i9 -= 3;
+                        i -= 3;
                     }
 
                     System.out.println("Octal: " + octalFinal);
@@ -404,9 +408,9 @@ public class TrabalhoPPi {
 
                     String binarioFinal = "";
 
-                    int i10 = 0;
-                    while (i10 < octalInput.length()) {
-                        char c = octalInput.charAt(i10);
+                     i = 0;
+                    while (i < octalInput.length()) {
+                        char c = octalInput.charAt(i);
                         String grupoBin = "";
 
                         if (c == '0')
@@ -431,7 +435,7 @@ public class TrabalhoPPi {
                         }
 
                         binarioFinal += grupoBin;
-                        i10++;
+                        i++;
                     }
 
                     System.out.println("Binário: " + binarioFinal);
