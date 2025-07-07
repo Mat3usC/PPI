@@ -9,8 +9,8 @@ public class TrabalhoPPi {
         Scanner scan = new Scanner(System.in);
 
         int opcao;
-        long decimal = 0, hexadecimal = 0, octal = 0, binario = 0;
-        String binarios, decimais, octals;
+        long decimal = 0;
+        String binarios, octals;
 
         do {
             System.out.println("\n");
