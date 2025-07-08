@@ -11,6 +11,7 @@ public class TrabalhoPPi {
         int opcao;
         long decimal = 0;
         String binarios, octals;
+        String hexaDigitos = "0123456789ABCDEF";
 
         do {
             System.out.println("\n");
@@ -74,7 +75,7 @@ public class TrabalhoPPi {
                             decimal += potencia1;
 
                         } else if (bit != '0') {
-                            System.out.println("Número errado, digite um número binário");
+                            System.out.println("Número invalido, digite um número binário");
 
                             break;
                         }
@@ -121,7 +122,6 @@ public class TrabalhoPPi {
                     decimal = 0;
 
                     long potencia8 = 1;
-                   
 
                     for (int i = octals.length() - 1; i >= 0; i--) {
                         char digito = octals.charAt(i);
@@ -148,7 +148,7 @@ public class TrabalhoPPi {
 
                     decimal = scan.nextLong();
 
-                    String hexaDigitos = "0123456789ABCDEF";
+                    hexaDigitos = "0123456789ABCDEF";
 
                     String posicaoHex = "";
 
@@ -235,10 +235,9 @@ public class TrabalhoPPi {
 
                 case 7:
                     System.out.println("Digite o número binário:");
-                    scan.nextLine(); 
+                    scan.nextLine();
                     binarios = scan.nextLine();
 
-                    
                     long decimalBinario = 0;
                     long potencia = 1;
 
@@ -255,7 +254,7 @@ public class TrabalhoPPi {
                         i--;
                     }
 
-                    
+                    hexaDigitos = "0123456789ABCDEF";
                     String hexa = "";
 
                     if (decimalBinario == 0) {
@@ -263,41 +262,7 @@ public class TrabalhoPPi {
                     } else {
                         while (decimalBinario > 0) {
                             int resto = (int) (decimalBinario % 16);
-                            String digitoHex = "";
-
-                            if (resto == 0)
-                                digitoHex = "0";
-                            else if (resto == 1)
-                                digitoHex = "1";
-                            else if (resto == 2)
-                                digitoHex = "2";
-                            else if (resto == 3)
-                                digitoHex = "3";
-                            else if (resto == 4)
-                                digitoHex = "4";
-                            else if (resto == 5)
-                                digitoHex = "5";
-                            else if (resto == 6)
-                                digitoHex = "6";
-                            else if (resto == 7)
-                                digitoHex = "7";
-                            else if (resto == 8)
-                                digitoHex = "8";
-                            else if (resto == 9)
-                                digitoHex = "9";
-                            else if (resto == 10)
-                                digitoHex = "A";
-                            else if (resto == 11)
-                                digitoHex = "B";
-                            else if (resto == 12)
-                                digitoHex = "C";
-                            else if (resto == 13)
-                                digitoHex = "D";
-                            else if (resto == 14)
-                                digitoHex = "E";
-                            else if (resto == 15)
-                                digitoHex = "F";
-
+                            char digitoHex = hexaDigitos.charAt(resto);
                             hexa = digitoHex + hexa;
                             decimalBinario = decimalBinario / 16;
                         }
@@ -308,54 +273,54 @@ public class TrabalhoPPi {
 
                 case 8:
                     System.out.println("Digite o número hexadecimal:");
-                    scan.nextLine(); 
+                    scan.nextLine();
                     String hexaParaBinario = scan.nextLine().toUpperCase();
 
                     String resultadoBinario = "";
 
-                     i = 0;
+                    i = 0;
                     while (i < hexaParaBinario.length()) {
-                        char c = hexaParaBinario.charAt(i);
-                        String binGrupo = "";
+                        char posicao = hexaParaBinario.charAt(i);
+                        String bin4 = "";
 
-                        if (c == '0')
-                            binGrupo = "0000";
-                        else if (c == '1')
-                            binGrupo = "0001";
-                        else if (c == '2')
-                            binGrupo = "0010";
-                        else if (c == '3')
-                            binGrupo = "0011";
-                        else if (c == '4')
-                            binGrupo = "0100";
-                        else if (c == '5')
-                            binGrupo = "0101";
-                        else if (c == '6')
-                            binGrupo = "0110";
-                        else if (c == '7')
-                            binGrupo = "0111";
-                        else if (c == '8')
-                            binGrupo = "1000";
-                        else if (c == '9')
-                            binGrupo = "1001";
-                        else if (c == 'A')
-                            binGrupo = "1010";
-                        else if (c == 'B')
-                            binGrupo = "1011";
-                        else if (c == 'C')
-                            binGrupo = "1100";
-                        else if (c == 'D')
-                            binGrupo = "1101";
-                        else if (c == 'E')
-                            binGrupo = "1110";
-                        else if (c == 'F')
-                            binGrupo = "1111";
+                        if (posicao == '0')
+                            bin4 = "0000";
+                        else if (posicao == '1')
+                            bin4 = "0001";
+                        else if (posicao == '2')
+                            bin4 = "0010";
+                        else if (posicao == '3')
+                            bin4 = "0011";
+                        else if (posicao == '4')
+                            bin4 = "0100";
+                        else if (posicao == '5')
+                            bin4 = "0101";
+                        else if (posicao == '6')
+                            bin4 = "0110";
+                        else if (posicao == '7')
+                            bin4 = "0111";
+                        else if (posicao == '8')
+                            bin4 = "1000";
+                        else if (posicao == '9')
+                            bin4 = "1001";
+                        else if (posicao == 'A')
+                            bin4 = "1010";
+                        else if (posicao == 'B')
+                            bin4 = "1011";
+                        else if (posicao == 'C')
+                            bin4 = "1100";
+                        else if (posicao == 'D')
+                            bin4 = "1101";
+                        else if (posicao == 'E')
+                            bin4 = "1110";
+                        else if (posicao == 'F')
+                            bin4 = "1111";
                         else {
-                            System.out.println("Caractere hexadecimal inválido: " + c);
+                            System.out.println("Caractere hexadecimal inválido: " + posicao);
                             break;
                         }
 
-                        resultadoBinario += binGrupo;
+                        resultadoBinario += bin4;
                         i++;
                     }
 
@@ -367,14 +332,13 @@ public class TrabalhoPPi {
                     scan.nextLine();
                     String binParaOctal = scan.nextLine();
 
-                    
                     while (binParaOctal.length() % 3 != 0) {
                         binParaOctal = "0" + binParaOctal;
                     }
 
                     String octalFinal = "";
 
-                     i = binParaOctal.length() - 3;
+                    i = binParaOctal.length() - 3;
                     while (i >= 0) {
                         String grupo = "";
                         int f = 0;
@@ -408,29 +372,29 @@ public class TrabalhoPPi {
 
                     String binarioFinal = "";
 
-                     i = 0;
+                    i = 0;
                     while (i < octalInput.length()) {
-                        char c = octalInput.charAt(i);
+                        char posicao = octalInput.charAt(i);
                         String grupoBin = "";
 
-                        if (c == '0')
+                        if (posicao == '0')
                             grupoBin = "000";
-                        else if (c == '1')
+                        else if (posicao == '1')
                             grupoBin = "001";
-                        else if (c == '2')
+                        else if (posicao == '2')
                             grupoBin = "010";
-                        else if (c == '3')
+                        else if (posicao == '3')
                             grupoBin = "011";
-                        else if (c == '4')
+                        else if (posicao == '4')
                             grupoBin = "100";
-                        else if (c == '5')
+                        else if (posicao == '5')
                             grupoBin = "101";
-                        else if (c == '6')
+                        else if (posicao == '6')
                             grupoBin = "110";
-                        else if (c == '7')
+                        else if (posicao == '7')
                             grupoBin = "111";
                         else {
-                            System.out.println("Caractere inválido no número octal: " + c);
+                            System.out.println("Caractere inválido no número octal: " + posicao);
                             break;
                         }
 
